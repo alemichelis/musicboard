@@ -1,0 +1,637 @@
+body {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  /* height: 600px; */
+  background-color: white;
+  overflow-y: scroll;
+  /* height: fit-content; */
+  /* height: 900px; */
+  width: 100%;
+}
+
+
+header {
+  background-color: white;
+  display: flex;
+  padding: 15px;
+}
+
+.profile {
+  margin: 0px 26px 0px -64px;
+}
+
+.initial {
+  margin: 0px 26px 0px 0px;
+}
+
+
+#fuentes-header {
+  display: flex;
+  margin: 0px 0px 0px 930px;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.fuente1 {
+  display: flex;
+}
+
+header h1 {
+  /* color: aquamarine; */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+#navbar {
+  background-color: white;
+  display: flex;
+  width: 240px;
+  height: 602px;
+  float: left;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 70px;
+}
+
+#navbar h2 {
+  /* color: darkmagenta; */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+
+main {
+  /* background-color: black; */
+  width: 100%;
+  height: 900px;
+  margin-top: 0px;
+  margin-left: 20px;
+
+}
+
+#mainpage {
+  /* display: flex; */
+  overflow:scroll;
+  /* margin-top: 1px;
+    margin-left: 1px; */
+  /* background-color: grey; */
+  margin: -366px 0px 0px 260px;
+  height: 602px;
+}
+
+#mainpage h3 {
+  /* color: coral; */
+  color: black;
+}
+
+
+
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.logos {
+  height: 900px;
+  width: 900px;
+}
+
+/* REPRODUCTOR DE MUSICA */
+
+#music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#audio-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#cover {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#artist {
+  font-size: 14px;
+  color: #333;
+}
+
+#audio-element {
+  width: 100%;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-play,
+.fa-pause {
+  font-size: 40px;
+  color: #333;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* REPRODUCTOR DE VIDEO */
+
+#videoPlayer {
+  width: 500px;
+  height: 300px;
+  background-color: black;
+  margin: 20px auto;
+}
+
+#fileInput {
+  display: none;
+}
+#uploadButton {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.pie{
+ margin: 25px 1px 1px 25px;
+}
+
+.scalable {
+  transform-origin: top left;
+  transition: transform 0.2s ease-in-out;
+}
+
+#container-footer{
+margin: -97px 0px 0px 0px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+#contenedor {
+  overflow: auto;
+  height: 400px;
+}
+
+.options {
+  padding: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+  margin-top: 20px;
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.option {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.option > span {
+  display: inline-block;
+  width: 90px;
+}
+
+.option > .dx-selectbox {
+  width: 100%;
+  max-width: 350px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dx-scheduler-group-header,
+.dx-scheduler-date-table-cell {
+  position: relative;
+}
+
+.dx-scheduler-date-table-other-month.dx-scheduler-date-table-cell {
+  opacity: 1;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.dx-scheduler-date-table-cell .dx-template-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-right: 6px;
+}
+
+.avatar {
+  width: 155px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 125px;
+}
+
+.name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.name h2 {
+  color: #fff;
+  text-align: left;
+  padding: 0 0 5px 175px;
+  margin: 0;
+}
+
+.info {
+  width: auto;
+  text-align: left;
+  height: 100%;
+  font-size: 11pt;
+  font-weight: normal;
+  padding: 25px 20px;
+  color: #707070;
+}
+
+.dx-color-scheme-contrast .info {
+  color: #fff;
+}
+
+.day-cell {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.employee-1 {
+  background-color: rgba(86, 202, 133, 0.1);
+}
+
+.employee-2 {
+  background-color: rgba(255, 151, 71, 0.1);
+}
+
+.employee-weekend-1 {
+  background-color: rgba(86, 202, 133, 0.2);
+}
+
+.employee-weekend-2 {
+  background-color: rgba(255, 151, 71, 0.2);
+}
+
+.training-background-0 {
+  background-image: url("images/gym/icon-abs.png");
+}
+
+.training-background-1 {
+  background-image: url("images/gym/icon-step.png");
+}
+
+.training-background-2 {
+  background-image: url("images/gym/icon-fitball.png");
+}
+
+.dx-theme-material .name h2 {
+  font-size: 28px;
+}
+
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}
+
+
+/* CALENDARIO */
+
+.demo-container {
+  display: flex;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .weekend,
+.dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .weekend {
+  color: #3030ff;
+}
+
+.dx-state-disabled.dx-calendar .dx-calendar-cell:not(.dx-calendar-other-month) .weekend {
+  color: #8080ff;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+  color: #ff3030;
+}
+
+.dx-state-disabled.dx-calendar .dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+  color: #ff8080;
+}
+
+.dx-calendar-week-number-cell .week-number {
+  font-style: italic;
+}
+
+.caption {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.options {
+  padding: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+}
+
+.option {
+  margin-top: 10px;
+}
