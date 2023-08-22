@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template Estilo Photoshop Avanzado</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  /* Estilos personalizados */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  .spreadsheet-container {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  .color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .color {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 50%;
+  }
+  .font-select {
+    margin-top: 10px;
+  }
+  .table {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .table th,
+  .table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  .table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+  }
+  .table td {
+    text-align: left;
+  }
+  .selected {
+    background-color: #3498db !important;
+    color: #fff;
+  }
+  .btn-group {
+    margin-bottom: 20px;
+  }
+  .btn {
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="spreadsheet-container">
+        <div class="btn-group" role="group">
+            <button id="addRowButton" class="btn btn-primary">Agregar Fila</button>
+            <button id="deleteRowButton" class="btn btn-danger">Borrar Fila</button>
+            <button id="deleteSelectedCellsButton" class="btn btn-warning">Borrar Celdas Seleccionadas</button>
+            <button id="deleteSelectedHeadersButton" class="btn btn-warning">Borrar Encabezados Seleccionados</button>
+            <button id="exportButton" class="btn btn-success">Exportar a PDF</button>
+        </div>
+        <div class="color-palette">
+            <div class="color" style="background-color: #ffcc00;" data-color="#ffcc00"></div>
+            <div class="color" style="background-color: #ff5733;" data-color="#ff5733"></div>
+            <div class="color" style="background-color: #33ff77;" data-color="#33ff77"></div>
+            <div class="color" style="background-color: #3366ff;" data-color="#3366ff"></div>
+            <div class="color" style="background-color: #ff33cc;" data-color="#ff33cc"></div>
+            <div class="color" style="background-color: #00cc99;" data-color="#00cc99"></div>
+            <div class="color" style="background-color: #9900cc;" data-color="#9900cc"></div>
+            <div class="color" style="background-color: #ff9900;" data-color="#ff9900"></div>
+            <div class="color" style="background-color: #00ffcc;" data-color="#00ffcc"></div>
+            <div class="color" style="background-color: #ccff00;" data-color="#ccff00"></div>
+            <div class="color" style="background-color: #ff6666;" data-color="#ff6666"></div>
+            <div class="color" style="background-color: #66ff66;" data-color="#66ff66"></div>
+            <div class="color" style="background-color: #6666ff;" data-color="#6666ff"></div>
+            <div class="color" style="background-color: #66ffff;" data-color="#66ffff"></div>
+            <div class="color" style="background-color: #ff66ff;" data-color="#ff66ff"></div>
+            <div class="color" style="background-color: #ffff66;" data-color="#ffff66"></div>
+            <div class="color" style="background-color: #9966ff;" data-color="#9966ff"></div>
+            <div class="color" style="background-color: #66ff99;" data-color="#66ff99"></div>
+            <div class="color" style="background-color: #ff9966;" data-color="#ff9966"></div>
+            <div class="color" style="background-color: #99ff66;" data-color="#99ff66"></div>
+        </div>
+        <div class="font-select">
+            <label for="fontSelect">Seleccionar Fuente:</label>
+            <select id="fontSelect" class="form-control">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Helvetica, sans-serif">Helvetica</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Times New Roman, serif">Times New Roman</option>
+                <option value="Courier New, monospace">Courier New</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Palatino Linotype, serif">Palatino Linotype</option>
+                <option value="Trebuchet MS, sans-serif">Trebuchet MS</option>
+                <option value="Impact, sans-serif">Impact</option>
+                <option value="Comic Sans MS, sans-serif">Comic Sans MS</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Book Antiqua, serif">Book Antiqua</option>
+                <option value="Arial Black, sans-serif">Arial Black</option>
+                <option value="Lucida Sans Unicode, sans-serif">Lucida Sans Unicode</option>
+                <option value="Tahoma, sans-serif">Tahoma</option>
+            </select>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Temas</th>
+                    <th>Guitarra 1</th>
+                    <th>Guitarra 2</th>
+                    <th>Bajo</th>
+                    <th>Voz</th>
+                    <th>Coros</th>
+                    <th>Bateria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Agregar fila
+    $("#addRowButton").click(function() {
+        $(".table tbody").append("<tr><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td></tr>");
+    });
+
+    // Borrar fila
+    $("#deleteRowButton").click(function() {
+        $(".table tr.selected").remove();
+    });
+
+    // Borrar celdas seleccionadas
+    $("#deleteSelectedCellsButton").click(function() {
+        $(".table td.selected").remove();
+    });
+
+    // Borrar encabezados seleccionados
+    $("#deleteSelectedHeadersButton").click(function() {
+        $(".table th.selected").remove();
+    });
+
+    // Cambio de color de celda
+    $(".color").click(function() {
+        const selectedColor = $(this).data("color");
+        $(".table td.selected").css("background-color", selectedColor);
+    });
+
+    // Cambio de fuente de celda
+    $("#fontSelect").change(function() {
+        const selectedFont = $(this).val();
+        $(".table td.selected").css("font-family", selectedFont);
+    });
+
+    // Exportar a PDF
+    $("#exportButton").click(function() {
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const table = document.querySelector('.table');
+        html2canvas(table, {
+            allowTaint: true,
+            useCORS: true
+        }).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
+            pdf.save('template_excel.pdf');
+        });
+    });
+
+    // Manejar la selección de celdas y encabezados
+    $(".table td, .table th").click(function() {
+        $(this).toggleClass("selected");
+    });
+  });
+</script>
+
+</body>
+</html>
+
+

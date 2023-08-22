@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +16,12 @@
     crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <script src="./js/dashboard.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
+  <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/23.1.4/css/dx.light.css" />
+  <script src="https://cdn3.devexpress.com/jslib/23.1.4/js/dx.all.js"></script>
+  <script src="https://unpkg.com/devextreme-aspnet-data@2.9.2/js/dx.aspnet.data.js"></script>
   <title>Musicboard</title>
 
   <!-- Custom styles for this template -->
@@ -23,7 +30,7 @@
   <link href="./css/dashboard.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="dx-viewport">
 
 
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -56,7 +63,7 @@
             <li class="nav-item">
               <a class="nav-link" href="publico.html">
                 <span data-feather="file" class="align-text-bottom"></span>
-              Perfil Público
+                Perfil Público
               </a>
             </li>
             <li class="nav-item">
@@ -100,7 +107,7 @@
             <li class="nav-item">
               <a class="nav-link" href="productores.html">
                 <span data-feather="file-text" class="align-text-bottom"></span>
-               Productores
+                Productores
               </a>
             </li>
             <li class="nav-item">
@@ -112,7 +119,7 @@
             <li class="nav-item">
               <a class="nav-link" href="fotos.html">
                 <span data-feather="file-text" class="align-text-bottom"></span>
-               Fotos
+                Fotos
               </a>
             </li>
             <li class="nav-item">
@@ -137,6 +144,7 @@
           <h1 class="h2">Discos</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
+              <h5 class="h2" style="color: red; font-size: 20px;">Armar la interaccion con el Backend y Front de audio</h5>
               <button type="button" class="btn btn-sm btn-outline-secondary">Music</button>
               <button type="button" class="btn btn-sm btn-outline-secondary">News</button>
             </div>
@@ -146,129 +154,381 @@
           </div>
         </div>
 
+        <!-- 
+      <div id="contenedor" width="900" height="580"> -->
 
-      <div id="contenedor" width="900" height="580">
-        <form action="" width="900" height="380">
-
-    
-          <table id="miTabla">
-            <thead>
-              <tr>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Tema</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Demo</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Bateria</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Bajo</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Guitarra 1</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Guitarra 2</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Arreglos</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Teclados</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Voz</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Coros</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Mezcla</div></th>
-                <th><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Master</div></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Tema 1</div></td>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Ok/Maqueta</div></td>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Ok/Maqueta</div></td>
-              </tr>
-              <tr>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Tema 2</div></td>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Ok/Maqueta</div></td>
-                <td><div class="editable" contenteditable="true" onkeydown="editarTexto(event)">Ok/Maqueta</div></td>
-              </tr>
-            </tbody>
+        <div class="spreadsheet-container">
+          <button id="addRowButton">Agregar Fila</button>
+          <button id="addColumnButton">Agregar Columna</button>
+          <button id="deleteRowButton">Borrar Fila</button>
+          <button id="deleteColumnButton">Borrar Columna</button>
+          <button id="deleteSelectedCellsButton">Borrar Celdas Seleccionadas</button>
+          <button id="deleteSelectedHeadersButton">Borrar Encabezados Seleccionados</button>
+          <table class="spreadsheet">
+              <thead>
+                  <tr>
+                      <th>Temas</th>
+                      <th>Guitarra 1</th>
+                      <th>Guitarra 2</th>
+                      <th>Bajo</th>
+                      <th>Voz</th>
+                      <th>Coros</th>
+                      <th>Bateria</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                      <td contenteditable="true"></td>
+                  </tr>
+              </tbody>
           </table>
-          <button onclick="agregarFila()">Agregar fila</button>
-          <button onclick="sumarColumnas()">Sumar columnas</button>
-          <button onclick="eliminarColumnas()">Eliminar columnas</button>
-          <button onclick="eliminarFila(0)">Eliminar fila</button>
-    
-        </form>  
-    <br>
-    <br>
-
-
-        <div id="music-player">
-            <div id="audio-info">
-              <div id="cover"></div>
-              <div id="details">
-                <h2 id="title"></h2>
-                <p id="artist"></p>
-              </div>
-            </div>
-            <audio id="audio-element" controls>
-              Your browser does not support the audio element.
-            </audio>
-            <div id="controls">
-              <i id="play-button" class="fa fa-play"></i>
-              <i id="pause-button" class="fa fa-pause"></i>
-            </div>
-          </div>
-          
-            <div id="file-input">
-              <input type="file" id="input-file" accept=".mp3">
-              <label for="input-file">Upload MP3</label>
-            </div>
-          </div>
-        </div>
-    
-
-        </main>
-
-        <div id="container-footer" style="padding-top: 8rem;">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-          </ul>
-          <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
-        </footer>
       </div>
 
-      <script>
-        const audioElement = document.getElementById("audio-element");
-        const playButton = document.getElementById("play-button");
-        const pauseButton = document.getElementById("pause-button");
-        const titleElement = document.getElementById("title");
-        const artistElement = document.getElementById("artist");
-        const coverElement = document.getElementById("cover");
-        const inputFile = document.getElementById("input-file");
-        
-        // Play and pause music
-        playButton.addEventListener("click", () => {
-          audioElement.play();
-          playButton.classList.add("hidden");
-          pauseButton.classList.remove("hidden");
+        <br>
+        <br>
+
+
+        <div id="music-player" style="height: 200px; width: 500px;">
+          <div id="audio-info">
+            <div id="cover"></div>
+            <div id="details">
+              <h2 id="title"></h2>
+              <p id="artist"></p>
+            </div>
+          </div>
+          <audio id="audio-element" controls>
+            Your browser does not support the audio element.
+          </audio>
+          <div id="controls">
+            <i id="play-button" class="fa fa-play"></i>
+            <i id="pause-button" class="fa fa-pause"></i>
+          </div>
+        </div>
+
+        <div id="file-input">
+          <input type="file" id="input-file" accept=".mp3">
+          <label for="input-file">Upload MP3</label>
+        </div>
+    </div>
+    <!-- </div> -->
+
+
+    </main>
+
+    <div id="container-footer" style="padding-top: 8rem;">
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+      </footer>
+    </div>
+
+    <script>
+      const audioElement = document.getElementById("audio-element");
+      const playButton = document.getElementById("play-button");
+      const pauseButton = document.getElementById("pause-button");
+      const titleElement = document.getElementById("title");
+      const artistElement = document.getElementById("artist");
+      const coverElement = document.getElementById("cover");
+      const inputFile = document.getElementById("input-file");
+
+      // Play and pause music
+      playButton.addEventListener("click", () => {
+        audioElement.play();
+        playButton.classList.add("hidden");
+        pauseButton.classList.remove("hidden");
+      });
+
+      pauseButton.addEventListener("click", () => {
+        audioElement.pause();
+        playButton.classList.remove("hidden");
+        pauseButton.classList.add("hidden");
+      });
+
+      // Update audio information
+      audioElement.addEventListener("ended", () => {
+        playButton.classList.remove("hidden");
+        pauseButton.classList.add("hidden");
+      });
+
+      // Upload MP3
+      inputFile.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        audioElement.src = URL.createObjectURL(file);
+      });
+
+      // Grilla
+
+      const addRowButton = document.getElementById("addRowButton");
+    const addColumnButton = document.getElementById("addColumnButton");
+    const deleteRowButton = document.getElementById("deleteRowButton");
+    const deleteColumnButton = document.getElementById("deleteColumnButton");
+    const table = document.querySelector(".spreadsheet");
+ 
+
+    table.addEventListener("click", (event) => {
+        const clickedCell = event.target.closest("td");
+        if (clickedCell) {
+            selectCell(clickedCell);
+        }
+    });
+
+
+    addRowButton.addEventListener("click", () => {
+        const newRow = document.createElement("tr");
+        for (let i = 0; i < 6; i++) {
+            const cell = document.createElement("td");
+            cell.contentEditable = true;
+            newRow.appendChild(cell);
+        }
+        table.querySelector("tbody").appendChild(newRow);
+    });
+
+    addColumnButton.addEventListener("click", () => {
+        const headerRow = table.querySelector("thead tr");
+        const newHeaderCell = document.createElement("th");
+        newHeaderCell.textContent = `Columna ${headerRow.children.length + 1}`;
+        headerRow.appendChild(newHeaderCell);
+
+        const bodyRows = table.querySelectorAll("tbody tr");
+        bodyRows.forEach(row => {
+            const newCell = document.createElement("td");
+            newCell.contentEditable = true;
+            row.appendChild(newCell);
         });
-        
-        pauseButton.addEventListener("click", () => {
-          audioElement.pause();
-          playButton.classList.remove("hidden");
-          pauseButton.classList.add("hidden");
-        });
-        
-        // Update audio information
-        audioElement.addEventListener("ended", () => {
-          playButton.classList.remove("hidden");
-          pauseButton.classList.add("hidden");
-        });
-        
-        // Upload MP3
-        inputFile.addEventListener("change", (event) => {
-          const file = event.target.files[0];
-          audioElement.src = URL.createObjectURL(file);
-        });
-        
-        // Set audio information
-        
-        
-        </script>
+    });
+
+    deleteRowButton.addEventListener("click", () => {
+        const bodyRows = table.querySelectorAll("tbody tr");
+        if (bodyRows.length > 1) {
+            const lastRow = bodyRows[bodyRows.length - 1];
+            lastRow.parentNode.removeChild(lastRow);
+        }
+    });
+
+    deleteColumnButton.addEventListener("click", () => {
+        const headerRow = table.querySelector("thead tr");
+        if (headerRow.children.length > 1) {
+            headerRow.removeChild(headerRow.lastElementChild);
+
+            const bodyRows = table.querySelectorAll("tbody tr");
+            bodyRows.forEach(row => {
+                row.removeChild(row.lastElementChild);
+            });
+        }
+    });
+
+    $(document).ready(function() {
+    // Agregar fila
+    $("#addRowButton").click(function() {
+        $(".spreadsheet tbody").append("<tr><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td><td contenteditable='true'></td></tr>");
+    });
+
+    // Agregar columna
+    $("#addColumnButton").click(function() {
+        $(".spreadsheet thead tr").append("<th contenteditable='true'></th>");
+        $(".spreadsheet tbody tr").append("<td contenteditable='true'></td>");
+    });
+
+    // Borrar fila
+    $("#deleteRowButton").click(function() {
+        $(".spreadsheet tbody tr:last").remove();
+    });
+
+    // Borrar columna
+    $("#deleteColumnButton").click(function() {
+        $(".spreadsheet thead th:last").remove();
+        $(".spreadsheet tbody td:last").remove();
+    });
+
+    // Borrar celdas seleccionadas
+    $("#deleteSelectedCellsButton").click(function() {
+        $(".spreadsheet td.selected").remove();
+    });
+
+    // Borrar encabezados seleccionados
+    $("#deleteSelectedHeadersButton").click(function() {
+        $(".spreadsheet th.selected").remove();
+    });
+
+    // Manejar la selección de celdas y encabezados
+    $(".spreadsheet td, .spreadsheet th").click(function() {
+        $(this).toggleClass("selected");
+    });
+});
+
+//       const spreadsheet = document.querySelector('.spreadsheet');
+// const tbody = spreadsheet.querySelector('tbody');
+// const thead = spreadsheet.querySelector('thead');
+// const addRowButton = document.getElementById('addRowButton');
+// const addColumnButton = document.getElementById('addColumnButton');
+// const deleteRowButton = document.getElementById('deleteRowButton');
+// const deleteColumnButton = document.getElementById('deleteColumnButton');
+
+// let selectedColumnIndex = -1;
+
+//       addRowButton.addEventListener('click', () => {
+//         addRow();
+//       });
+
+//       addColumnButton.addEventListener('click', () => {
+//         addColumn();
+//       });
+
+//       deleteRowButton.addEventListener('click', () => {
+//     deleteSelectedRow();
+// });
+
+// deleteColumnButton.addEventListener('click', () => {
+//     deleteSelectedColumn();
+// });
+
+// addRowButton.addEventListener('click', () => {
+//     addRow();
+// });
+
+// addColumnButton.addEventListener('click', () => {
+//     addColumn();
+// });
+
+
+// spreadsheet.addEventListener('click', (e) => {
+//     const cell = e.target.closest('th');
+//     if (cell) {
+//         selectedColumnIndex = cell.cellIndex;
+//         highlightColumn();
+//     }
+// });
+
+// function highlightColumn() {
+//     const headerCells = thead.firstElementChild.children;
+//     for (let i = 0; i < headerCells.length; i++) {
+//         headerCells[i].classList.toggle('selected-column', i === selectedColumnIndex);
+//     }
+
+//     const dataRows = tbody.children;
+//     for (let i = 0; i < dataRows.length; i++) {
+//         const dataCells = dataRows[i].children;
+//         for (let j = 0; j < dataCells.length; j++) {
+//             dataCells[j].classList.toggle('selected-column', j === selectedColumnIndex);
+//         }
+//     }
+// }
+
+// function highlightRow() {
+//     const dataRows = Array.from(tbody.children);
+//     dataRows.forEach((row, rowIndex) => {
+//         row.classList.toggle('selected-row', rowIndex === selectedRowIndex);
+//     });
+// }
+
+// function deleteSelectedRow() {
+//     const selectedRow = document.querySelector('.selected-row');
+//     if (selectedRow) {
+//         selectedRow.remove();
+//     }
+// }
+
+// function deleteSelectedColumn() {
+//     const selectedColumn = document.querySelector('.selected-column');
+//     if (!selectedColumn) return;
+
+//     const columnIndex = Array.from(selectedColumn.parentElement.children).indexOf(selectedColumn);
+//     if (columnIndex === -1) return;
+
+//     const headerCells = Array.from(thead.firstElementChild.children);
+//     headerCells[columnIndex].remove();
+
+//     const dataRows = Array.from(tbody.children);
+//     dataRows.forEach(row => {
+//         row.children[columnIndex].remove();
+//     });
+// }
+
+//       // Add initial rows and columns
+//       addRow();
+//       addColumn();
+
+//       function addRow() {
+//         const newRow = document.createElement('tr');
+//         for (let i = 0; i < thead.children.length; i++) {
+//           const newCell = document.createElement('td');
+//           newCell.contentEditable = true;
+//           newRow.appendChild(newCell);
+//         }
+//         tbody.appendChild(newRow);
+//       }
+
+//       function addColumn() {
+//         const newHeaderCell = document.createElement('th');
+//         newHeaderCell.textContent = getColumnName(thead.children.length);
+//         thead.firstElementChild.appendChild(newHeaderCell);
+
+//         for (let i = 0; i < tbody.children.length; i++) {
+//           const newRow = tbody.children[i];
+//           const newCell = document.createElement('td');
+//           newCell.contentEditable = true;
+//           newRow.appendChild(newCell);
+//         }
+//       }
+
+    
+//       function getColumnName(index) {
+//         let name = '';
+//         while (index > 0) {
+//           const remainder = (index - 1) % 26;
+//           name = String.fromCharCode(65 + remainder) + name;
+//           index = Math.floor((index - 1) / 26);
+//         }
+//         return name;
+//       }
+
+  
+
+//       function showContextMenu(x, y, cell) {
+//     const contextMenu = document.createElement('div');
+//     contextMenu.classList.add('context-menu');
+//     contextMenu.style.left = `${x}px`;
+//     contextMenu.style.top = `${y}px`;
+
+//     const deleteRowOption = document.createElement('div');
+//     deleteRowOption.textContent = 'Borrar Fila';
+//     deleteRowOption.classList.add('context-menu-option');
+//     deleteRowOption.addEventListener('click', () => {
+//         deleteRow(cell);
+//         contextMenu.remove();
+//     });
+
+//     const deleteColumnOption = document.createElement('div');
+//     deleteColumnOption.textContent = 'Borrar Columna';
+//     deleteColumnOption.classList.add('context-menu-option');
+//     deleteColumnOption.addEventListener('click', () => {
+//         deleteColumn(cell);
+//         contextMenu.remove();
+//     });
+
+//     contextMenu.appendChild(deleteRowOption);
+//     contextMenu.appendChild(deleteColumnOption);
+//     document.body.appendChild(contextMenu);
+
+//     document.addEventListener('click', () => {
+//         contextMenu.remove();
+//     });
+// }
+
+
+    </script>
 
 </body>
 
